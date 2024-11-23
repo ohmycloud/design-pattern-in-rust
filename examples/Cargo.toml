@@ -1,0 +1,51 @@
+[package]
+name = "examples"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = { workspace = true }
+cursive = { workspace = true }
+nom = { workspace = true }
+bytes = { workspace = true }
+dateparser = { workspace = true }
+regex = { workspace = true }
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "example"
+path = "src/main.rs"
+
+[[bin]]
+name = "fsm"
+path = "src/fsm.rs"
+
+[[bin]]
+name = "log-parser"
+path = "src/log_parser.rs"
+
+[[bin]]
+name = "nom-parser"
+path = "src/nom_parser.rs"
+
+[[bin]]
+name = "begin-code"
+path = "src/begin_code.rs"
+
+[[bin]]
+name = "weather-fsm"
+path = "src/weather_fsm.rs"
+
+[[bin]]
+name = "weather-nom"
+path = "src/weather_nom.rs"
+
+[[bin]]
+name = "trip"
+path = "src/trip.rs"
+
+[[bin]]
+name = "transaction"
+path = "src/transaction.rs"
