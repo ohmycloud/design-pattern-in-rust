@@ -1,0 +1,25 @@
+[package]
+name = "hexagonal-architecture"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "hexagonal"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "hexagonal_server"
+path = "src/bin/server/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+axum.workspace = true
+config.workspace = true
+envy.workspace = true
+serde.workspace = true
+sqlx.workspace = true
+tokio.workspace = true
+tower-http.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+uuid.workspace = true
