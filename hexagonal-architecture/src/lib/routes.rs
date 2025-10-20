@@ -62,6 +62,12 @@ impl<T: Serialize> ApiSuccess<T> {
     }
 }
 
+impl<T: Serialize> IntoResponse for ApiSuccess<T> {
+    fn into_response(self) -> Response {
+        self.0.into_response()
+    }
+}
+
 #[derive(Debug)]
 pub enum ApiError {
     InternalServerError(anyhow::Error),
@@ -124,7 +130,7 @@ async fn save_author(tx: &mut Transaction<'_, Sqlite>, name: &str) -> Result<Uui
     let query = sqlx::query!(
         "INSERT INTO authors (id, name) VALUES ($1, $2)",
         id_as_string,
-        name
+        name,
     );
 
     tx.execute(query).await?;

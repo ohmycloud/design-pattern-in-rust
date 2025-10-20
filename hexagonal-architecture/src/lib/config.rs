@@ -2,12 +2,12 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AppConfig {
-    server_port: u16,
-    database_url: String,
+    pub server_port: u16,
+    pub database_url: String,
 }
 
 impl AppConfig {
-    fn from_env() -> anyhow::Result<Self, envy::Error> {
+    pub fn from_env() -> anyhow::Result<Self, envy::Error> {
         envy::from_env()
     }
 }

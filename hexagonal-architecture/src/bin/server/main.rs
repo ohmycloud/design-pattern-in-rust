@@ -1,7 +1,8 @@
 use anyhow::Context;
 use axum::routing::post;
 
-use hexagonal::routes::AppState;
+use hexagonal::config::AppConfig;
+use hexagonal::routes::{AppState, create_author};
 use sqlx::{SqlitePool, sqlite::SqliteConnectOptions};
 use std::str::FromStr;
 use std::sync::Arc;
