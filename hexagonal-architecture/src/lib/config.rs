@@ -8,6 +8,8 @@ pub struct AppConfig {
 
 impl AppConfig {
     pub fn from_env() -> anyhow::Result<Self, envy::Error> {
+        // Load environment variables from .env file
+        dotenvy::dotenv().ok();
         envy::from_env()
     }
 }
